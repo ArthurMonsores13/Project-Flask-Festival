@@ -28,30 +28,28 @@ Ideal for practicing:
 - **Jinja2**
 - **HTML5**
 - **CSS3**
-- Bootstrap (optional, if used)
 
 ---
 
-Project-Flask-Festival/
+```
+## Project-Flask-Festival/
+├── app.py                # Main Flask application and routes
+├── evento.py             # Event, Category and Speaker classes
+├── requirements.txt      # Project dependencies
+├── .gitignore            # Git ignored files
+├── README.md             # Projeto e instruções
+│
+├── static/
+│   ├── css/
+│   │   └── style.css
+│   ├── img/
+│   └── js/
+│
+└── templates/
+    ├── index.html
+    ├── categorias.html
+    ├── palestrantes.html
+    └── detalhes.html
 
--- 📁 app.py               # Main Flask application and routes
--- 📁 evento.py            # Event, Category and Speaker classes
--- 📄 requirements.txt     # Project dependencies
--- 📝 .gitignore           # Git ignored files
-|
-|-- 📂 static/
-|   |-- 🎨 css/
-|   |   |-- style.css
-|   |
-|   |-- 🖼 img/
-|   |-- 📜 js/
-|
-|-- 📂 templates/
-|   |-- index.html
-|   |-- categorias.html
-|   |-- palestrantes.html
-|   |-- detalhes.html
-|
-|-- 📘 README.md
 
 
