@@ -1,0 +1,11 @@
+# Ambiente virtual
+venv/
+virtual/
+
+# Arquivos Python gerados automaticamente
+__pycache__/
+*.pyc
+
+# Arquivos do Flask ou IDE
+.env
+*.log

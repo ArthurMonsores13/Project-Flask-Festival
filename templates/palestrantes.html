@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nossos Palestrantes</title>
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
+    <link
+      rel="icon"
+      href="{{ url_for('static', filename='iconee.png') }}"
+      type="image/png"
+    />
+  </head>
+
+  <body>
+    <header class="site-header">
+      <div class="title">
+        <h1>Nossos Palestrantes</h1>
+      </div>
+
+      <nav aria-label="Navegação principal">
+        <ul>
+          <li><a href="{{ url_for('home') }}">Início</a></li>
+          <li><a href="{{ url_for('detalhes') }}">Detalhes</a></li>
+          <li><a href="{{ url_for('categorias') }}">Categorias</a></li>
+          <li>
+            <a href="#" aria-current="page">Palestrantes</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section
+        class="palestrantes-section"
+        aria-labelledby="titulo-palestrantes"
+      >
+        <div class="title">
+          <h2 id="titulo-palestrantes">Conheça quem vai falar hoje</h2>
+        </div>
+
+        <div class="container">
+          {% if palestrantes %}
+            {% for p in palestrantes %}
+              <article class="card speaker-{{ p.id | lower }}">
+                <div class="card-content">
+                  <h3 class="nome">
+                    {{ p.nome | default('Nome não disponível') }}
+                  </h3>
+                  <p>
+                    {{ p.cargo | default('Cargo não disponível') }}
+                  </p>
+                  <p>
+                    {{ p.descricao | default('Descrição não disponível') }}
+                  </p>
+                </div>
+              </article>
+            {% endfor %}
+          {% else %}
+            <p>Nenhum palestrante disponível no momento.</p>
+          {% endif %}
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>© 2025 - Festival ASM. Todos os direitos reservados.</p>
+    </footer>
+  </body>
+</html>

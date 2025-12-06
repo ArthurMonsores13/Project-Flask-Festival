@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Categorias</title>
+    <link
+      rel="stylesheet"
+      href="{{url_for ('static', filename='styles.css')}}"
+    />
+    <link rel="icon" href="{{url_for('static', filename='iconee.png')}}" />
+  </head>
+  <header class="site-header">
+    <div class="title">
+      <h1>Categorias Do Evento</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="{{ url_for('home') }}">Início</a></li>
+        <li><a href="{{ url_for('detalhes') }}">Detalhes</a></li>
+        <li><a href="#" aria-current="page">Categorias</a></li>
+        <li><a href="{{ url_for('palestrantes')}}">Palestrantes</a></li>
+      </ul>
+    </nav>
+  </header>
+  <body>
+    <div class="title">
+      <h2>Veja aqui detalhes sobre cada palestra de hoje</h2>
+    </div>
+    <div class="container">
+      {%for p in categorias%} {%if p.id == 'tecnologia'%}
+      <article class="card">
+        <div class="card-content">
+          <h3>Tecnologia</h3>
+          <p>{{p.descricao}}</p>
+        </div>
+      </article>
+      {%elif p.id == 'saude'%}
+      <article class="card">
+        <div class="card-content">
+          <h3>Saude</h3>
+          <p>{{p.descricao}}</p>
+        </div>
+      </article>
+      {%elif p.id == 'desenvolvimento'%}
+      <article class="card">
+        <div class="card-content">
+          <h3>Desenvolvimento</h3>
+          <p>{{p.descricao}}</p>
+        </div>
+      </article>
+      {% endif %} {% endfor %}
+    </div>
+  </body>
+  <footer class="footer">
+    <p>© 2025 - Festival ASM. Todos os direitos reservados.</p>
+  </footer>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Início - Festival ASM</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
+    <link rel="icon" href="{{ url_for('static', filename='iconee.png') }}" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="title">
+        <h1>Festival ASM</h1>
+      </div>
+      <nav aria-label="Navegação principal">
+        <ul>
+          <li>
+            <a href="{{ url_for('home') }}" aria-current="page">Início</a>
+          </li>
+          <li><a href="{{ url_for('detalhes') }}">Detalhes</a></li>
+          <li><a href="{{ url_for('categorias') }}">Categorias</a></li>
+          <li><a href="{{ url_for('palestrantes') }}">Palestrantes</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="home-section" aria-labelledby="titulo-home">
+        <div class="title">
+          <h2 id="titulo-home">Bem-vindo ao Festival ASM!</h2>
+          <p class="subtitle">
+            Descubra um evento incrível repleto de palestras, workshops e
+            networking.
+          </p>
+        </div>
+        <div class="container">
+          <article class="card">
+            <div class="card-content">
+              <h3>Sobre o Festival</h3>
+              <ul>
+                <li class="texto"><strong>Data Oficial:</strong> 06/09/2069</li>
+                <li class="texto">
+                  <strong>Local:</strong> Rua Xurubangos, nº 69
+                </li>
+                {% if home %} {% for item in home %}
+                <li>
+                  {{ item.descricao | default('Descrição não disponível') }}
+                </li>
+                {% endfor %} {% else %}
+                <li>Nenhuma informação adicional disponível.</li>
+                {% endif %}
+              </ul>
+              <a
+                href="{{ url_for('detalhes') }}"
+                class="cta-button"
+                aria-label="Saiba mais sobre o Festival ASM"
+                >Saiba Mais</a
+              >
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>© 2025 - Festival ASM. Todos os direitos reservados.</p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,222 @@
+/* Reset e base */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+  background: linear-gradient(135deg, #f4f6ff, #e3e6ff);
+  font-family: Poppins, sans-serif;
+  line-height: 1.5;
+  color: #222;
+}
+
+/* Cabeçalho */
+.site-header {
+  background: #1f1f2e;
+  color: #fff;
+  padding: 1rem 1.5rem;
+  text-align: center;
+}
+
+.site-header .title {
+  margin: 0 0 1rem;
+  font-size: 1.8rem;
+}
+
+.site-header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  flex-wrap: wrap;
+}
+
+.site-header a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* Títulos e textos principais */
+h1,
+h2,
+h3,
+.title {
+  color: #4c4cff;
+  font-weight: 700;
+}
+
+h1,
+h2 {
+  margin: 0.5em 0;
+  text-align: center;
+}
+
+h3 {
+  font-size: 1.2rem;
+  margin: 0 0 0.5rem;
+}
+
+.title {
+  text-align: center;
+  font-size: 2rem;
+  margin: 30px 0 10px;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  margin: 0.5rem auto 1rem;
+  max-width: 800px;
+  text-align: center;
+}
+
+.intro-text,
+.texto {
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+/* Layout principal */
+.container {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Cards */
+.card {
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 100%;
+  max-width: 350px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.card-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.card-content {
+  padding: 20px;
+  text-align: center;
+}
+
+.card-content h3 {
+  font-size: 1.4rem;
+  color: #4c4cff;
+}
+
+.card-content p {
+  font-size: 0.95rem;
+  color: #222;
+}
+
+/* Lista de detalhes */
+.event-details {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem;
+  text-align: left;
+}
+
+.event-details li {
+  margin-bottom: 0.75rem;
+}
+
+/* Destaques de texto */
+.nome {
+  font-size: 1.1rem;
+  color: #4c4cff;
+}
+
+/* Links e botões */
+.highlight-link,
+.site-header a,
+.cta-button {
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.2s ease, color 0.2s ease, text-decoration 0.2s ease;
+}
+
+.highlight-link {
+  color: #4c4cff;
+}
+
+.site-header a:hover,
+.highlight-link:hover {
+  text-decoration: underline;
+}
+
+.cta-button {
+  display: inline-block;
+  background: #4c4cff;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+.cta-button:hover {
+  background: #3a3acf;
+}
+
+/* Sessão palestrantes */
+.palestrantes-section .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+/* Rodapé */
+.footer {
+  margin-top: auto;
+  background-color: #e8e9f5;
+  color: #222;
+  text-align: center;
+  padding: 20px 0;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .container {
+    padding: 40px 16px;
+    gap: 20px;
+  }
+
+  .title {
+    font-size: 1.6rem;
+  }
+
+  .card {
+    max-width: 100%;
+  }
+
+  .site-header {
+    padding: 0.8rem 1rem;
+  }
+}

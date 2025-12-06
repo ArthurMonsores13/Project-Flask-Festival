@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Detalhes - Festival ASM</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
+    <link rel="icon" href="{{ url_for('static', filename='iconee.png') }}" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="title">
+        <h1>Alguns detalhes sobre nosso festival!!</h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="{{ url_for('home') }}">Início</a></li>
+          <li>
+            <a href="{{ url_for('detalhes') }}" aria-current="page">Detalhes</a>
+          </li>
+          <li><a href="{{ url_for('categorias') }}">Categorias</a></li>
+          <li><a href="{{ url_for('palestrantes') }}">Palestrantes</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="detalhes-section" aria-labelledby="titulo-detalhes">
+        <div class="title">
+          <h2 id="titulo-detalhes">Festival ASM</h2>
+        </div>
+        <div class="container">
+          <article class="card">
+            <div class="card-content">
+              <ul>
+                <li><strong>Data:</strong> 06/09/2069, às 14 horas</li>
+                <li><strong>Local:</strong> Rua Xurubangos, nº 69</li>
+                <li>
+                  <a
+                    class="highlight-link"
+                    href="{{ url_for('palestrantes') }}"
+                    aria-label="Ver lista de palestrantes do evento"
+                  >
+                    Palestrantes
+                  </a>
+                  — temos ilustres presenças hoje!
+                </li>
+                <li>
+                  <a
+                    class="highlight-link"
+                    href="{{ url_for('categorias') }}"
+                    aria-label="Ver categorias do evento"
+                  >
+                    Categorias do evento
+                  </a>
+                  — clique aqui para saber sobre as categorias do dia
+                </li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>© 2025 - Festival ASM. Todos os direitos reservados.</p>
+    </footer>
+  </body>
+</html>
