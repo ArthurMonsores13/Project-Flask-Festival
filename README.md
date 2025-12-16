@@ -31,25 +31,6 @@ Ideal for practicing:
 
 ---
 
-```
-## Project-Flask-Festival/
-├── app.py                # Main Flask application and routes
-├── evento.py             # Event, Category and Speaker classes
-├── requirements.txt      # Project dependencies
-├── .gitignore            # Git ignored files
-├── README.md             # Projeto e instruções
-│
-├── static/
-│   ├── css/
-│   │   └── style.css
-│   ├── img/
-│   └── js/
-│
-└── templates/
-    ├── index.html
-    ├── categorias.html
-    ├── palestrantes.html
-    └── detalhes.html
 
 
 
